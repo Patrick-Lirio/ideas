@@ -1,0 +1,25 @@
+
+// this is how you can display using php in laravel
+{{-- displaying first index in an array --}}
+<?php echo $users[0]['name'] ?>
+
+{{-- looping in an array of 'users' --}}
+<?php foreach ($users as $user) { ?>
+    <h1> <?= $user['name'] ?> </h1>
+<?php } ?>
+
+{{-- version 2 of the above code  cleaner--}}
+@foreach ($users as $user )
+    <h1>{{ $user['name']}}</h1>
+    <h1>{{ $user['age']}}</h1>
+    @if ($user['age'] < 18)
+    <p> {{ $user['name'] }} is a minor, User can't drive</p>
+    @else
+        <p> {{ $user['name'] }} is a legal, User can drive</p>
+    @endif
+    <hr>
+@endforeach
+@copyright {{date('M Y')}}
+
+
+
